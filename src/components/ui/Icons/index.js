@@ -6,47 +6,62 @@ import { ReactComponent as ArrowLeftIcon } from "assets/icons/arrowLeft.svg";
 import { ReactComponent as SkipLeftIcon } from "assets/icons/skipLeft.svg";
 import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
 import { ReactComponent as VolumeIcon } from "assets/icons/volume.svg";
+import { ReactComponent as Logo } from "assets/icons/logo.svg";
 
 import { styled } from "styled-components";
 
-export const Play = styled(PlayIcon)`
+const Play = styled(PlayIcon)`
   fill: ${(props) => props.color || "white"};
   stroke: ${(props) => props.color || "white"};
 `;
 
-export const Pause = styled(PauseIcon)`
+const Pause = styled(PauseIcon)`
   fill: ${(props) => props.color || "white"};
   stroke: ${(props) => props.color || "white"};
 `;
 
-export const Music = styled(MusicIcon)`
+const Music = styled(MusicIcon)`
   stroke: ${(props) => props.color || "white"};
 `;
 
-export const Heart = styled(HeartIcon)`
+const Heart = styled(HeartIcon)`
   stroke: ${(props) => props.color || "white"};
 `;
 
-export const ArrowLeft = styled(ArrowLeftIcon)`
+const ArrowLeft = styled(ArrowLeftIcon)`
   stroke: ${(props) => props.color || "white"};
 `;
 
-export const ArrowRight = styled(ArrowLeft)`
+const ArrowRight = styled(ArrowLeft)`
   transform: rotate(180deg);
 `;
 
-export const SkipLeft = styled(SkipLeftIcon)`
+const SkipLeft = styled(SkipLeftIcon)`
   fill: ${(props) => props.color || "white"};
 `;
 
-export const SkipRight = styled(SkipLeft)`
+const SkipRight = styled(SkipLeft)`
   transform: rotate(180deg);
 `;
 
-export const Search = styled(SearchIcon)`
+const Search = styled(SearchIcon)`
   fill: ${(props) => props.color || "white"};
 `;
 
-export const Volume = styled(VolumeIcon)`
+const Volume = styled(VolumeIcon)`
   stroke: ${(props) => props.color || "white"};
 `;
+
+export {
+  Play,
+  ArrowLeft,
+  ArrowRight,
+  Heart,
+  Music,
+  Pause,
+  Search,
+  SkipLeft,
+  SkipRight,
+  Volume,
+  Logo,
+};
