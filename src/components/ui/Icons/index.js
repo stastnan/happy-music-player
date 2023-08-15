@@ -8,7 +8,7 @@ import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
 import { ReactComponent as VolumeIcon } from "assets/icons/volume.svg";
 import { ReactComponent as Logo } from "assets/icons/logo.svg";
 
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 const Play = styled(PlayIcon)`
   fill: ${(props) => props.color || "white"};
