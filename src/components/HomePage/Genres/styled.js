@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  gap: 35px;
 `;
 
 export const TitleRow = styled.div`
@@ -26,4 +26,10 @@ export const Button = styled(IconButton)`
     background-color: ${({ theme }) => theme.colors.primary};
     opacity: 1;
   }
+`;
+export const GenresWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
 `;
