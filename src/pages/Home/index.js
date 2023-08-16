@@ -1,4 +1,4 @@
-import { Hero } from "components/HomePage";
+import { Genres, Hero } from "components/HomePage";
 import styled from "styled-components";
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
   return (
     <ContentWrapper>
       <Hero />
-      <div>Genres</div>
+      <Genres />
       <div>Songs Table</div>
       <aside>Artists</aside>
     </ContentWrapper>
