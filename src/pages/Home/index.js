@@ -1,17 +1,16 @@
 import { Genres, Hero } from "components/HomePage";
 import styled from "styled-components";
+import { ContentWrapper, TrendsAndArtistsSection } from "./styled";
 
 function Home() {
-  const ContentWrapper = styled.main`
-    padding: 0 120px;
-  `;
-
   return (
     <ContentWrapper>
       <Hero />
       <Genres />
-      <div>Songs Table</div>
-      <aside>Artists</aside>
+      <TrendsAndArtistsSection>
+        <div>Songs Table</div>
+        <aside>Artists</aside>
+      </TrendsAndArtistsSection>
     </ContentWrapper>
   );
 }

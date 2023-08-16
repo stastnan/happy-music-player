@@ -6,6 +6,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 35px;
+  margin-bottom: 35px;
+  overflow: hidden;
 `;
 
 export const TitleRow = styled.div`
@@ -32,4 +34,9 @@ export const GenresWrapper = styled.div`
   align-items: center;
   gap: 10px;
   width: 100%;
+  min-height: 116px;
+`;
+
+export const GenresSkeletonWrapper = styled.div`
+  display: flex;
 `;
