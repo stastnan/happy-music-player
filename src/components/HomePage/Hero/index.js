@@ -1,4 +1,4 @@
-import { ButtonText, MainTitle, Text } from "components/ui/Typography";
+import { ButtonText, MainTitle } from "components/ui/Typography";
 import { PlayButton, TextWrapper, Wrapper, HeroText } from "./styled";
 import DesktopRadio from "assets/images/radio-desktop.png";
 import { Play } from "components/ui/Icons";
