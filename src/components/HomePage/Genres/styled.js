@@ -1,5 +1,5 @@
 import IconButton from "components/ui/IconButton";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ export const Button = styled(IconButton)`
 export const GenresWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   width: 100%;
   min-height: 116px;
 `;

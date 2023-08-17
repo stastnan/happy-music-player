@@ -1,3 +1,9 @@
+import { useEffect, useState, useRef, useCallback } from "react";
+import axios from "axios";
+import GenreCard from "./GenreCard";
+import Skeleton from "react-loading-skeleton";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { ArrowLeft, ArrowRight } from "components/ui/Icons";
 import { SectionSubtitle } from "components/ui/Typography";
 import {
@@ -8,13 +14,6 @@ import {
   Wrapper,
   GenresSkeletonWrapper,
 } from "./styled";
-import { useEffect, useState, useRef, useCallback } from "react";
-import axios from "axios";
-import GenreCard from "./GenreCard";
-import Skeleton from "react-loading-skeleton";
-import { Pagination } from "swiper/modules";
-
-import { Swiper, SwiperSlide } from "swiper/react";
 
 function Genres() {
   const [genres, setGenres] = useState([]);
@@ -58,7 +57,7 @@ function Genres() {
         </TitleRow>
         <GenresWrapper>
           {isLoading &&
-            [1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+            [...Array(8).keys()].map((num) => (
               <Skeleton
                 key={num}
                 height={116}

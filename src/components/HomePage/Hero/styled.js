@@ -1,5 +1,5 @@
-import { Text } from "components/ui/Typography";
 import styled from "styled-components";
+import { Text } from "components/ui/Typography";
 
 export const Wrapper = styled.section`
   display: flex;

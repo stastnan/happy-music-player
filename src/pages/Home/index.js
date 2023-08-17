@@ -1,12 +1,12 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Artists, Genres, Hero } from "components/HomePage";
-import { ContentWrapper, GreyTitle, TrendsAndArtistsSection } from "./styled";
+import { ContentWrapper, GreyTitle, TrendsAndArtistsSection, StyledAside } from "./styled";
+import { SectionTitle } from "components/ui/Typography";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import { SectionTitle } from "components/ui/Typography";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 function Home() {
   const [chart, setChart] = useState();
@@ -32,11 +32,11 @@ function Home() {
           <SectionTitle>Trending right now</SectionTitle>
           <div>Songs Table</div>
         </div>
-        <aside>
+        <StyledAside>
           <GreyTitle>Global</GreyTitle>
           <SectionTitle>Top Artists</SectionTitle>
           <Artists isLoading={isLoading} artists={chart?.artists.data} />
-        </aside>
+        </StyledAside>
       </TrendsAndArtistsSection>
     </ContentWrapper>
   );
