@@ -14,6 +14,8 @@ import {
   Wrapper,
   GenresSkeletonWrapper,
 } from "./styled";
+import { loadGenres } from "services/api";
+import { toast } from "react-toastify";
 
 function Genres() {
   const [genres, setGenres] = useState([]);
@@ -33,10 +35,15 @@ function Genres() {
 
   useEffect(() => {
     const loadData = async () => {
-      setIsLoading(true);
-      const data = await axios("/genre");
-      setGenres(data.data.data.filter((genre) => genre.name.toLowerCase() !== "all"));
-      setIsLoading(false);
+      try {
+        setIsLoading(true);
+        const data = await loadGenres();
+        setGenres(data);
+      } catch (err) {
+        toast.error(err.message);
+      } finally {
+        setIsLoading(false);
+      }
     };
     loadData();
   }, []);
