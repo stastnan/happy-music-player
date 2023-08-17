@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { loadChart } from "services/api";
 import { toast } from "react-toastify";
+import TracksTable from "components/TracksTable";
 
 function Home() {
   const [chart, setChart] = useState();
@@ -29,6 +30,8 @@ function Home() {
     loadData();
   }, []);
 
+  console.log(chart?.artists?.data);
+
   return (
     <ContentWrapper>
       <Hero />
@@ -37,12 +40,12 @@ function Home() {
         <div>
           <GreyTitle>Global</GreyTitle>
           <SectionTitle>Trending right now</SectionTitle>
-          <div>Songs Table</div>
+          <TracksTable tracks={chart?.tracks.data} />
         </div>
         <StyledAside>
           <GreyTitle>Global</GreyTitle>
           <SectionTitle>Top Artists</SectionTitle>
-          <Artists isLoading={isLoading} artists={chart?.artists.data} />
+          <Artists isLoading={isLoading} artists={chart?.artists?.data} />
         </StyledAside>
       </TrendsAndArtistsSection>
     </ContentWrapper>
