@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { Artists, Genres, Hero } from "components/HomePage";
-import { ContentWrapper, GreyTitle, TrendsAndArtistsSection, StyledAside } from "./styled";
+import { GreyTitle, TrendsAndArtistsSection, StyledAside } from "./styled";
 import { SectionTitle } from "components/ui/Typography";
 
 // Import Swiper styles
@@ -10,6 +9,7 @@ import "swiper/css/pagination";
 import { loadChart } from "services/api";
 import { toast } from "react-toastify";
 import TracksTable from "components/TracksTable";
+import { ContentWrapper } from "components/Layout";
 
 function Home() {
   const [chart, setChart] = useState();
