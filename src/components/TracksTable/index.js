@@ -14,16 +14,18 @@ import {
   StyledIconButton,
   TableHeadingTime,
   Line,
+  TrackRow,
+  IconWrapper,
 } from "./styled";
-import { Heart } from "components/ui/Icons";
+import { Heart, Play } from "components/ui/Icons";
 import { formatToMinAndSec } from "utils/time";
 
 function TracksTable({ tracks }) {
   return (
-    <Table>
+    <Table cellSpacing={0}>
       <TableHead>
         <tr>
-          <TableHeading>
+          <TableHeading first>
             <SubText>#</SubText>
           </TableHeading>
           <TableHeading>
@@ -43,9 +45,12 @@ function TracksTable({ tracks }) {
       <Line colSpan={5} />
       <tbody>
         {tracks?.map((track, index) => (
-          <tr key={track.id}>
+          <TrackRow key={track.id}>
             <TableData>
-              <SongNumberText>{String(index + 1).padStart(2, "0")}</SongNumberText>
+              <SongNumberText className="text">{String(index + 1).padStart(2, "0")}</SongNumberText>
+              <IconWrapper className="icon">
+                <Play />
+              </IconWrapper>
             </TableData>
             <TrackInfo>
               <TrackInfoImage src={track.album.cover} alt={`${track.album.name}'s cover`} />
@@ -66,7 +71,7 @@ function TracksTable({ tracks }) {
                 <Heart />
               </StyledIconButton>
             </TableData>
-          </tr>
+          </TrackRow>
         ))}
       </tbody>
     </Table>
