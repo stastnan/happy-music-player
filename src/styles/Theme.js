@@ -7,6 +7,7 @@ export const theme = {
     primary: "#E2577F",
     purple: "#4E3FE4",
     lightWhite: "#FFFFFF33",
+    darkGrey: "#333B48",
   },
   fonts: {
     poppins: "Poppins",

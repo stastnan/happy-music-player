@@ -1,3 +1,4 @@
+import Slider, { Range } from "rc-slider";
 import { ToastContainer } from "react-toastify";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { ThemeProvider } from "styled-components";
@@ -11,6 +12,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 // Import react toastify styles
 import "react-toastify/dist/ReactToastify.css";
+import Player from "components/Player";
+
+//Import rc-slider styles
+import "rc-slider/assets/index.css";
 
 function App() {
   return (
@@ -22,6 +27,7 @@ function App() {
       >
         <Header />
         <Home />
+        <Player />
         <ToastContainer
           position="bottom-left"
           autoClose={5000}
