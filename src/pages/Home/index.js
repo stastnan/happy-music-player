@@ -40,7 +40,7 @@ function Home() {
         <div>
           <GreyTitle>Global</GreyTitle>
           <SectionTitle>Trending right now</SectionTitle>
-          <TracksTable tracks={chart?.tracks.data} />
+          <TracksTable tracks={chart?.tracks.data} isLoading={isLoading} />
         </div>
         <StyledAside>
           <GreyTitle>Global</GreyTitle>

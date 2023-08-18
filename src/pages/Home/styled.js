@@ -5,7 +5,7 @@ export const ContentWrapper = styled.main`
   padding: 0 120px;
 `;
 
-export const TrendsAndArtistsSection = styled.aside`
+export const TrendsAndArtistsSection = styled.div`
   display: grid;
   grid-template-columns: 65% 35%;
   padding-bottom: 135px;
