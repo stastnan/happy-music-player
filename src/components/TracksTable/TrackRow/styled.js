@@ -3,7 +3,7 @@ import { SubText, Text } from "components/ui/Typography";
 import { styled } from "styled-components";
 
 export const TableData = styled.td`
-  padding: 10px;
+  padding: 10px 20px 10px 0;
 `;
 
 export const TrackInfo = styled(TableData)`
@@ -12,7 +12,8 @@ export const TrackInfo = styled(TableData)`
   align-items: center;
 `;
 
-export const TrackInfoTextWrapper = styled(TableData)`
+export const TrackInfoTextWrapper = styled.div`
+  padding: 10px 20px 10px 0;
   display: flex;
   flex-direction: column;
   gap: 10px;

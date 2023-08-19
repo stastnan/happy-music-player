@@ -30,8 +30,6 @@ function Home() {
     loadData();
   }, []);
 
-  console.log(chart?.artists?.data);
-
   return (
     <ContentWrapper>
       <Hero />

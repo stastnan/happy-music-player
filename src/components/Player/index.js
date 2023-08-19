@@ -89,10 +89,22 @@ function Player() {
     });
   };
 
+  const handleNextSong = () => {
+    dispatch({
+      type: actions.HANDLE_NEXT_SONG,
+    });
+  };
+
+  const handlePrevSong = () => {
+    dispatch({
+      type: actions.HANDLE_PREV_SONG,
+    });
+  };
+
   useEffect(() => {
     if (!audioRef.current) return;
     if (isPlaying) {
-      audioRef.current.play();
+      audioRef.current.play().catch((err) => console.log(err));
     } else {
       audioRef.current.pause();
     }
@@ -133,6 +145,7 @@ function Player() {
           hidden
           onLoadedMetadata={onTimeUpdate}
           onTimeUpdate={onTimeUpdate}
+          onEnded={handleNextSong}
         />
         <TrackInfoWrapper>
           <TrackImage src={track.album.cover} alt={`${track.album}'s cover'`} />
@@ -142,13 +155,13 @@ function Player() {
           </TrackInfoTextWrapper>
         </TrackInfoWrapper>
         <ControlsWrapper>
-          <IconButton>
+          <IconButton onClick={handlePrevSong}>
             <SkipLeft />
           </IconButton>
           <IconButton onClick={togglePlay} width={55} height={55} withBackground>
             {isPlaying ? <Pause /> : <Play />}
           </IconButton>
-          <IconButton>
+          <IconButton onClick={handleNextSong}>
             <SkipRight />
           </IconButton>
         </ControlsWrapper>
@@ -165,7 +178,7 @@ function Player() {
             railStyle={{ height: 8, backgroundColor: theme.colors.darkGrey }}
             handleStyle={{ border: "none", backgroundColor: theme.colors.white, marginTop: -3 }}
           />
-          <TrackTime grey>{formatToMinAndSec(playerState.duration)}</TrackTime>
+          <TrackTime grey={1}>{formatToMinAndSec(playerState.duration)}</TrackTime>
         </ProgressWrapper>
         <VolumeWrapper>
           <IconButton width={24} height={24} onClick={toggleVolume}>
