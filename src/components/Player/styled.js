@@ -1,4 +1,4 @@
-import { SubText } from "components/ui/Typography";
+import { SubText, Text } from "components/ui/Typography";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -25,6 +25,7 @@ export const TrackInfoTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-right: 15px;
 `;
 
 export const TrackImage = styled.img`
@@ -35,6 +36,17 @@ export const TrackImage = styled.img`
 
 export const ArtistName = styled(SubText)`
   color: ${({ theme }) => theme.colors.secondaryGrey};
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
+
+export const TrackTitle = styled(Text)`
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 export const ControlsWrapper = styled.div`

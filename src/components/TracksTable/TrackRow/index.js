@@ -11,23 +11,20 @@ import {
   IconWrapper,
   StyledTrackRow,
 } from "./styled";
-import { Heart, Play } from "components/ui/Icons";
+import { Heart, Pause, Play } from "components/ui/Icons";
 import { formatToMinAndSec } from "utils/time";
 import Skeleton from "react-loading-skeleton";
 
-function TrackRow({ track, index }) {
+function TrackRow({ track, index, onClick, isPlaying }) {
   return (
-    <StyledTrackRow key={track?.id}>
+    <StyledTrackRow onClick={() => onClick(track)} key={track?.id}>
       <TableData>
         <SongNumberText className="text">
           {track ? String(index + 1).padStart(2, "0") : <Skeleton width={27} height={27} />}
         </SongNumberText>
-        <IconWrapper className="icon">
-          <Play />
-        </IconWrapper>
+        <IconWrapper className="icon">{isPlaying ? <Pause /> : <Play />}</IconWrapper>
       </TableData>
       <TrackInfo>
-        {" "}
         {track ? (
           <TrackInfoImage src={track?.album?.cover} alt={`${track?.album.title}'s cover`} />
         ) : (
@@ -74,6 +71,8 @@ TrackRow.propTypes = {
     }),
   }),
   index: PropTypes.number,
+  onClick: PropTypes.func,
+  isPlaying: PropTypes.bool,
 };
 
 export default TrackRow;

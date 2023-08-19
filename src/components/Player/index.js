@@ -10,6 +10,7 @@ import {
   TrackInfoTextWrapper,
   TrackInfoWrapper,
   TrackTime,
+  TrackTitle,
   VolumeWrapper,
   Wrapper,
 } from "./styled";
@@ -17,8 +18,10 @@ import { Text } from "components/ui/Typography";
 import IconButton from "components/ui/IconButton";
 import { Pause, Play, SkipLeft, SkipRight, Volume } from "components/ui/Icons";
 import { theme } from "styles/Theme";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { formatToMinAndSec } from "utils/time";
+import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
+import { actions } from "context/actions";
 
 const track = {
   id: 1626811902,
@@ -71,8 +74,9 @@ const track = {
 };
 
 function Player() {
+  const dispatch = useContext(PlayerDispatchContext);
+  const { track, isPlaying } = useContext(PlayerContext);
   const [playerState, setPlayerState] = useState({
-    isPlaying: false,
     currentTime: 0,
     duration: 0,
     volume: 0.4,
@@ -80,17 +84,19 @@ function Player() {
   const audioRef = useRef();
 
   const togglePlay = () => {
-    setPlayerState((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
+    dispatch({
+      type: actions.TOGGLE_PLAY,
+    });
   };
 
   useEffect(() => {
     if (!audioRef.current) return;
-    if (playerState.isPlaying) {
+    if (isPlaying) {
       audioRef.current.play();
     } else {
       audioRef.current.pause();
     }
-  }, [playerState, track, audioRef]);
+  }, [isPlaying, track, audioRef]);
 
   const onTimeUpdate = () => {
     if (!audioRef.current) return;
@@ -116,7 +122,7 @@ function Player() {
     const newVolume = playerState.volume > 0 ? 0 : 0.4;
     onVolumeChange(newVolume);
   };
-
+  if (!track) return null;
   return (
     <Wrapper>
       <ContentWrapper display="flex" items="center">
@@ -131,7 +137,7 @@ function Player() {
         <TrackInfoWrapper>
           <TrackImage src={track.album.cover} alt={`${track.album}'s cover'`} />
           <TrackInfoTextWrapper>
-            <Text>{track.title}</Text>
+            <TrackTitle>{track.title}</TrackTitle>
             <ArtistName>{track.artist.name}</ArtistName>
           </TrackInfoTextWrapper>
         </TrackInfoWrapper>
@@ -140,7 +146,7 @@ function Player() {
             <SkipLeft />
           </IconButton>
           <IconButton onClick={togglePlay} width={55} height={55} withBackground>
-            {playerState.isPlaying ? <Pause /> : <Play />}
+            {isPlaying ? <Pause /> : <Play />}
           </IconButton>
           <IconButton>
             <SkipRight />

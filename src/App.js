@@ -16,32 +16,40 @@ import Player from "components/Player";
 
 //Import rc-slider styles
 import "rc-slider/assets/index.css";
+import { initialState, playerReducer } from "context/playerReducer";
+import { useReducer } from "react";
+import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
 
 function App() {
+  const [state, dispatch] = useReducer(playerReducer, initialState);
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <SkeletonTheme
-        baseColor={theme.colors.secondaryBlack}
-        highlightColor={theme.colors.lightWhite}
-      >
-        <Header />
-        <Home />
-        <Player />
-        <ToastContainer
-          position="bottom-left"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
-      </SkeletonTheme>
-    </ThemeProvider>
+    <PlayerContext.Provider value={state}>
+      <PlayerDispatchContext.Provider value={dispatch}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <SkeletonTheme
+            baseColor={theme.colors.secondaryBlack}
+            highlightColor={theme.colors.lightWhite}
+          >
+            <Header />
+            <Home />
+            <Player />
+            <ToastContainer
+              position="bottom-left"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
+          </SkeletonTheme>
+        </ThemeProvider>
+      </PlayerDispatchContext.Provider>
+    </PlayerContext.Provider>
   );
 }
 
