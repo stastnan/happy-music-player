@@ -15,8 +15,10 @@ import {
 } from "./styled";
 import { Text } from "components/ui/Typography";
 import IconButton from "components/ui/IconButton";
-import { Play, SkipLeft, SkipRight, Volume } from "components/ui/Icons";
+import { Pause, Play, SkipLeft, SkipRight, Volume } from "components/ui/Icons";
 import { theme } from "styles/Theme";
+import { useEffect, useRef, useState } from "react";
+import { formatToMinAndSec } from "utils/time";
 
 const track = {
   id: 1626811902,
@@ -69,9 +71,63 @@ const track = {
 };
 
 function Player() {
+  const [playerState, setPlayerState] = useState({
+    isPlaying: false,
+    currentTime: 0,
+    duration: 0,
+    volume: 0.4,
+  });
+  const audioRef = useRef();
+
+  const togglePlay = () => {
+    setPlayerState((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
+  };
+
+  useEffect(() => {
+    if (!audioRef.current) return;
+    if (playerState.isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [playerState, track, audioRef]);
+
+  const onTimeUpdate = () => {
+    if (!audioRef.current) return;
+    const currentTime = audioRef.current.currentTime;
+    const duration = audioRef.current.duration;
+
+    setPlayerState((prev) => ({ ...prev, currentTime, duration }));
+  };
+
+  const onTrackTimeDrag = (newTime) => {
+    if (!audioRef.current) return;
+    audioRef.current.currentTime = newTime;
+    setPlayerState((prev) => ({ ...prev, currentTime: newTime }));
+  };
+
+  const onVolumeChange = (newVolume) => {
+    if (!audioRef.current) return;
+    audioRef.current.volume = newVolume;
+    setPlayerState((prev) => ({ ...prev, volume: newVolume }));
+  };
+
+  const toggleVolume = () => {
+    const newVolume = playerState.volume > 0 ? 0 : 0.4;
+    onVolumeChange(newVolume);
+  };
+
   return (
     <Wrapper>
       <ContentWrapper display="flex" items="center">
+        <audio
+          ref={audioRef}
+          src={track.preview}
+          controls
+          hidden
+          onLoadedMetadata={onTimeUpdate}
+          onTimeUpdate={onTimeUpdate}
+        />
         <TrackInfoWrapper>
           <TrackImage src={track.album.cover} alt={`${track.album}'s cover'`} />
           <TrackInfoTextWrapper>
@@ -83,28 +139,38 @@ function Player() {
           <IconButton>
             <SkipLeft />
           </IconButton>
-          <IconButton width={55} height={55} withBackground>
-            <Play />
+          <IconButton onClick={togglePlay} width={55} height={55} withBackground>
+            {playerState.isPlaying ? <Pause /> : <Play />}
           </IconButton>
           <IconButton>
             <SkipRight />
           </IconButton>
         </ControlsWrapper>
         <ProgressWrapper>
-          <TrackTime>0:00</TrackTime>
+          <TrackTime>{formatToMinAndSec(playerState.currentTime)}</TrackTime>
           <Slider
+            onChange={onTrackTimeDrag}
+            min={0}
+            max={playerState.duration}
+            step={0.2}
+            value={playerState.currentTime}
             style={{ padding: "3px 0" }}
             trackStyle={{ height: 8, backgroundColor: theme.colors.white }}
             railStyle={{ height: 8, backgroundColor: theme.colors.darkGrey }}
             handleStyle={{ border: "none", backgroundColor: theme.colors.white, marginTop: -3 }}
           />
-          <TrackTime grey>2:30</TrackTime>
+          <TrackTime grey>{formatToMinAndSec(playerState.duration)}</TrackTime>
         </ProgressWrapper>
         <VolumeWrapper>
-          <IconButton width={24} height={24}>
+          <IconButton width={24} height={24} onClick={toggleVolume}>
             <Volume />
           </IconButton>
           <Slider
+            value={playerState.volume}
+            step={0.01}
+            min={0}
+            max={1}
+            onChange={onVolumeChange}
             style={{ padding: "3px 0" }}
             trackStyle={{ height: 8, backgroundColor: theme.colors.white }}
             railStyle={{ height: 8, backgroundColor: theme.colors.darkGrey }}

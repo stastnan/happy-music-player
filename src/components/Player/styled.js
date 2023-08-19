@@ -52,6 +52,7 @@ export const ProgressWrapper = styled.div`
 
 export const TrackTime = styled(SubText)`
   margin: 0 20px;
+  width: 80px;
   color: ${(props) => (props.grey ? props.theme.colors.secondaryGrey : "inherit")};
 `;
 
