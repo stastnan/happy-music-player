@@ -16,15 +16,21 @@ import Player from "components/Player";
 //Import rc-slider styles
 import "rc-slider/assets/index.css";
 import { initialState, playerReducer } from "context/playerReducer";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
 import Search from "pages/Search";
 import { Route, Routes } from "react-router-dom";
 import Layout from "components/Layout";
 import Error from "pages/Error";
+import { setStorageValue } from "services/localStorage";
 
 function App() {
   const [state, dispatch] = useReducer(playerReducer, initialState);
+
+  useEffect(() => {
+    setStorageValue("savedTrackIds", state.savedTrackIds);
+  }, [state.savedTrackIds]);
+
   return (
     <PlayerContext.Provider value={state}>
       <PlayerDispatchContext.Provider value={dispatch}>
