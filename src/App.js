@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "react-error-boundary";
 import { ToastContainer } from "react-toastify";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { ThemeProvider } from "styled-components";
@@ -33,13 +34,15 @@ function App() {
             highlightColor={theme.colors.lightWhite}
           >
             <GlobalStyles />
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="*" element={<Error />} />
-              </Route>
-            </Routes>
+            <ErrorBoundary fallback={<Error isErrorPage />}>
+              <Routes>
+                <Route path="/" element={<Layout />}>
+                  <Route index element={<Home />} />
+                  <Route path="/search" element={<Search />} />
+                  <Route path="*" element={<Error />} />
+                </Route>
+              </Routes>
+            </ErrorBoundary>
             <ToastContainer
               position="bottom-left"
               autoClose={5000}

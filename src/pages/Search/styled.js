@@ -1,6 +1,6 @@
 import { PLAYER_HEIGHT } from "common/constants";
 import { SectionSubtitle } from "components/ui/Typography";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;

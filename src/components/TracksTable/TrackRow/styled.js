@@ -1,6 +1,6 @@
 import IconButton from "components/ui/IconButton";
 import { SubText, Text } from "components/ui/Typography";
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const TableData = styled.td`
   padding: 10px 20px 10px 0;
