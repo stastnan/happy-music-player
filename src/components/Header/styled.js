@@ -1,3 +1,4 @@
+import { HEADER_HEIGHT } from "common/constants";
 import styled from "styled-components";
 
 export const Wrapper = styled.header`
@@ -5,7 +6,7 @@ export const Wrapper = styled.header`
 
   border-radius: 0px 0px 25px 25px;
   background-color: ${({ theme }) => theme.colors.secondaryBlack};
-  height: 118px;
+  height: ${HEADER_HEIGHT}px;
 `;
 
 export const LogoWrapper = styled.div`

@@ -1,7 +1,6 @@
 import Slider from "rc-slider";
 
 import { ContentWrapper } from "components/Layout";
-import PropTypes from "prop-types";
 import {
   ArtistName,
   ControlsWrapper,
@@ -124,7 +123,7 @@ function Player() {
   };
 
   const onVolumeChange = (newVolume) => {
-    if (!audioRef.current) return;
+    if (!audioRef?.current) return;
     audioRef.current.volume = newVolume;
     setPlayerState((prev) => ({ ...prev, volume: newVolume }));
   };
@@ -199,7 +198,5 @@ function Player() {
     </Wrapper>
   );
 }
-
-// Player.propTypes = {};
 
 export default Player;
