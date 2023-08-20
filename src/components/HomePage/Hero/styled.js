@@ -38,7 +38,12 @@ export const PlayButton = styled.button`
   display: flex;
   gap: 14px;
   align-items: center;
+
   &:hover {
     opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.6;
   }
 `;
