@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 import { loadChart } from "services/api";
 import { toast } from "react-toastify";
 import TracksTable from "components/TracksTable";
-import { ContentWrapper } from "components/Layout";
 
 function Home() {
   const [chart, setChart] = useState();
@@ -31,7 +30,7 @@ function Home() {
   }, []);
 
   return (
-    <ContentWrapper>
+    <main>
       <Hero />
       <Genres />
       <TrendsAndArtistsSection>
@@ -46,7 +45,7 @@ function Home() {
           <Artists isLoading={isLoading} artists={chart?.artists?.data} />
         </StyledAside>
       </TrendsAndArtistsSection>
-    </ContentWrapper>
+    </main>
   );
 }
 

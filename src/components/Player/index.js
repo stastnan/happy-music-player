@@ -14,7 +14,6 @@ import {
   VolumeWrapper,
   Wrapper,
 } from "./styled";
-import { Text } from "components/ui/Typography";
 import IconButton from "components/ui/IconButton";
 import { Pause, Play, SkipLeft, SkipRight, Volume } from "components/ui/Icons";
 import { theme } from "styles/Theme";
@@ -79,7 +78,7 @@ function Player() {
   const [playerState, setPlayerState] = useState({
     currentTime: 0,
     duration: 0,
-    volume: 0.4,
+    volume: 0.1,
   });
   const audioRef = useRef();
 
@@ -131,7 +130,7 @@ function Player() {
   };
 
   const toggleVolume = () => {
-    const newVolume = playerState.volume > 0 ? 0 : 0.4;
+    const newVolume = playerState.volume > 0 ? 0 : 0.1;
     onVolumeChange(newVolume);
   };
   if (!track) return null;
