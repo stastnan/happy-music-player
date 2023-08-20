@@ -7,8 +7,6 @@ import Input from "components/ui/Input";
 import SearchIcon from "assets/icons/search.svg";
 
 function Search() {
-  console.log(SearchIcon);
-
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [tracks, setTracks] = useState(false);

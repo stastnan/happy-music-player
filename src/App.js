@@ -18,11 +18,9 @@ import "rc-slider/assets/index.css";
 import { initialState, playerReducer } from "context/playerReducer";
 import { useEffect, useReducer } from "react";
 import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
-import Search from "pages/Search";
-import { Route, Routes } from "react-router-dom";
-import Layout from "components/Layout";
-import Error from "pages/Error";
+
 import { setStorageValue } from "services/localStorage";
+import AppRouter from "AppRouter";
 
 function App() {
   const [state, dispatch] = useReducer(playerReducer, initialState);
@@ -40,15 +38,7 @@ function App() {
             highlightColor={theme.colors.lightWhite}
           >
             <GlobalStyles />
-            <ErrorBoundary fallback={<Error isErrorPage />}>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<Home />} />
-                  <Route path="/search" element={<Search />} />
-                  <Route path="*" element={<Error />} />
-                </Route>
-              </Routes>
-            </ErrorBoundary>
+            <AppRouter />
             <ToastContainer
               position="bottom-left"
               autoClose={5000}
