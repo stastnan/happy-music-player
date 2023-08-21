@@ -11,6 +11,11 @@ export const MainTitle = styled.h1`
     font-size: 30px;
     line-height: 45px;
   }
+
+  ${device.md} {
+    font-size: 30px;
+    line-height: 45px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -18,6 +23,11 @@ export const SectionTitle = styled.h2`
   font-size: 35px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 52px;
+
+  ${device.md} {
+    font-size: 22px;
+    line-height: 33px;
+  }
 
   ${device.md} {
     font-size: 22px;
@@ -61,4 +71,16 @@ export const ButtonText = styled.span`
   font-size: 23px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: normal;
+`;
+
+export const SmallText = styled.span`
+  font-family: ${({ theme }) => theme.fonts.inter}, sans-serif;
+  font-weight: ${({ theme }) => theme.fontWeights.normal};
+  font-size: 18px;
+  line-height: 22px;
+
+  ${device.md} {
+    font-size: 18px;
+    line-height: 22px;
+  }
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SectionSubtitle } from "components/ui/Typography";
-import { PLAYER_HEIGHT } from "common/constants";
+import { MOBILE_PLAYER_HEIGHT, PLAYER_HEIGHT } from "common/constants";
 import { device } from "styles/BreakPoints";
 
 export const TrendsAndArtistsSection = styled.div`
@@ -13,6 +13,10 @@ export const TrendsAndArtistsSection = styled.div`
     display: flex;
     flex-direction: column;
     gap: 45px;
+  }
+
+  ${device.lg} {
+    padding-bottom: calc(${MOBILE_PLAYER_HEIGHT}px + 50px);
   }
 `;
 
