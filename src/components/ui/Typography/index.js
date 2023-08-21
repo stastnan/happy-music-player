@@ -1,10 +1,16 @@
 import styled from "styled-components";
 import { device } from "styles/BreakPoints";
+
 export const MainTitle = styled.h1`
   font-family: ${({ theme }) => theme.fonts.poppins}, sans-serif;
   font-size: 60px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 90px;
+
+  ${device.md} {
+    font-size: 30px;
+    line-height: 45px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
@@ -12,6 +18,11 @@ export const SectionTitle = styled.h2`
   font-size: 35px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: 52px;
+
+  ${device.md} {
+    font-size: 22px;
+    line-height: 33px;
+  }
 `;
 
 export const SectionSubtitle = styled.h3`
@@ -38,6 +49,11 @@ export const SubText = styled.span`
   font-size: 20px;
   font-weight: ${({ theme }) => theme.fontWeights.normal};
   line-height: normal;
+
+  ${device.md} {
+    font-size: 18px;
+    line-height: 22px;
+  }
 `;
 
 export const ButtonText = styled.span`

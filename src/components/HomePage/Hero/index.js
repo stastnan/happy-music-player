@@ -1,5 +1,5 @@
 import { ButtonText, MainTitle } from "components/ui/Typography";
-import { PlayButton, TextWrapper, Wrapper, HeroText, HeroImage } from "./styled";
+import { PlayButton, TextWrapper, Wrapper, HeroText, HeroImage, HeroTitleText } from "./styled";
 import DesktopRadioImage from "assets/images/radio-desktop.png";
 import TabletRadioImage from "assets/images/radio-tablet.png";
 
@@ -13,7 +13,7 @@ import { breakpoints } from "styles/BreakPoints";
 
 function Hero({ tracks }) {
   const dispatch = useContext(PlayerDispatchContext);
-  const { width } = useWindowSize;
+  const { width } = useWindowSize();
 
   const handlePlayClick = () => {
     dispatch({
@@ -27,7 +27,7 @@ function Hero({ tracks }) {
   return (
     <Wrapper>
       <TextWrapper>
-        <MainTitle>Radio</MainTitle>
+        <HeroTitleText>Radio</HeroTitleText>
         <HeroText>Pick your todays mood. We will play a perfect mix!</HeroText>
         <PlayButton onClick={handlePlayClick} disabled={!tracks || tracks.length <= 0}>
           <Play />

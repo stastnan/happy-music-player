@@ -6,8 +6,11 @@ import Skeleton from "react-loading-skeleton";
 import { useContext } from "react";
 import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
 import { actions } from "context/actions";
+import { useWindowSize } from "hooks/useWindowSize";
+import { breakpoints, device } from "styles/BreakPoints";
 
 function TracksTable({ tracks, isLoading }) {
+  const { width } = useWindowSize();
   const dispatch = useContext(PlayerDispatchContext);
   const { track, isPlaying, savedTrackIds } = useContext(PlayerContext);
 
@@ -35,15 +38,21 @@ function TracksTable({ tracks, isLoading }) {
           <TableHeading first={1}>
             <SubText>{isLoading ? <Skeleton width={25} /> : "#"}</SubText>
           </TableHeading>
+
           <TableHeading>
             <SubText>{isLoading ? <Skeleton /> : "Song Name"}</SubText>
           </TableHeading>
-          <TableHeadingTime>
-            <SubText>{isLoading ? <Skeleton /> : "Time"}</SubText>
-          </TableHeadingTime>
-          <TableHeading>
-            <SubText>{isLoading ? <Skeleton /> : "Album Name"}</SubText>
-          </TableHeading>
+
+          {width > breakpoints.md && (
+            <TableHeadingTime>
+              <SubText>{isLoading ? <Skeleton /> : "Time"}</SubText>
+            </TableHeadingTime>
+          )}
+          {width > breakpoints.md && (
+            <TableHeading>
+              <SubText>{isLoading ? <Skeleton /> : "Album Name"}</SubText>
+            </TableHeading>
+          )}
           <TableHeading>
             <SubText>{isLoading ? <Skeleton /> : "Actions"}</SubText>
           </TableHeading>
@@ -64,10 +73,12 @@ function TracksTable({ tracks, isLoading }) {
               index={index}
               handleSaveTrackClick={handleSaveTrackClick}
               isSaved={savedTrackIds.includes(currentTrack.id)}
+              screenWidth={width}
             />
           ))}
 
-        {isLoading && [...Array(9).keys()].map((num) => <TrackRow key={num} index={num} />)}
+        {isLoading &&
+          [...Array(9).keys()].map((num) => <TrackRow key={num} index={num} screenWidth={width} />)}
       </tbody>
     </Table>
   );
