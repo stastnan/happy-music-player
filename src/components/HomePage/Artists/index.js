@@ -23,7 +23,7 @@ function Artists({ artists, isLoading }) {
                   circle
                   wrapper={ArtistsSkeletonWrapper}
                 />
-                <Skeleton height={isMobileLayout ? 19 : 27} />
+                <Skeleton height={isMobileLayout ? 19 : 27} width={isMobileLayout ? 88 : 120} />
               </ArtistLoaderWrapper>
             ))}
           <Swiper slidesPerView="auto" spaceBetween={20} modules={[Pagination]}>

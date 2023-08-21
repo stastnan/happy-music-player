@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
-import { Wrapper, Image, TextName } from "./styled";
+import { Wrapper, Image, ArtistName } from "./styled";
 
 function ArtistCard({ image, name }) {
   return (
     <Wrapper>
       <Image src={image} alt={`${name}'s photo`} />
-      <TextName>{name}</TextName>
+      <ArtistName>{name}</ArtistName>
     </Wrapper>
   );
 }

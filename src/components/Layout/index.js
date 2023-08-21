@@ -12,6 +12,8 @@ export const ContentWrapper = styled.main`
   display: ${(props) => props.display || "block"};
   align-items: ${(props) => props.items || "flex-start"};
   justify-content: ${(props) => props.content || "flex-start"};
+  gap: ${(props) => props.gap || "0"}px;
+  flex-direction: ${(props) => props.direction || "row"};
 
   ${device.xl} {
     padding: 0 62px;

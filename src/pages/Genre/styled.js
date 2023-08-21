@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   gap: 90px;
   padding-top: 52px;
   padding-bottom: calc(${PLAYER_HEIGHT}px + 50px);
+
   ${device.lg} {
     padding-bottom: calc(${MOBILE_PLAYER_HEIGHT}px + 50px);
   }
