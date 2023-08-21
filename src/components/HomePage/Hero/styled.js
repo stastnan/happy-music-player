@@ -26,3 +26,5 @@ export const PlayButton = styled(Button)`
   gap: 14px;
   align-items: center;
 `;
+
+export const HeroImage = styled.img``;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { device } from "styles/BreakPoints";
 export const MainTitle = styled.h1`
   font-family: ${({ theme }) => theme.fonts.poppins}, sans-serif;
   font-size: 60px;
@@ -19,6 +19,11 @@ export const SectionSubtitle = styled.h3`
   font-size: 25px;
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   line-height: normal;
+
+  ${device.md} {
+    font-size: 20px;
+    line-height: 30px;
+  }
 `;
 
 export const Text = styled.span`

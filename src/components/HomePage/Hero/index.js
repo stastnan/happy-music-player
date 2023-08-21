@@ -1,14 +1,19 @@
 import { ButtonText, MainTitle } from "components/ui/Typography";
-import { PlayButton, TextWrapper, Wrapper, HeroText } from "./styled";
-import DesktopRadio from "assets/images/radio-desktop.png";
+import { PlayButton, TextWrapper, Wrapper, HeroText, HeroImage } from "./styled";
+import DesktopRadioImage from "assets/images/radio-desktop.png";
+import TabletRadioImage from "assets/images/radio-tablet.png";
+
 import { Play } from "components/ui/Icons";
 import { PropTypes } from "prop-types";
 import { useContext } from "react";
 import { PlayerDispatchContext } from "context/playerContext";
 import { actions } from "context/actions";
+import { useWindowSize } from "hooks/useWindowSize";
+import { breakpoints } from "styles/BreakPoints";
 
 function Hero({ tracks }) {
   const dispatch = useContext(PlayerDispatchContext);
+  const { width } = useWindowSize;
 
   const handlePlayClick = () => {
     dispatch({
@@ -18,7 +23,7 @@ function Hero({ tracks }) {
       isPlaying: true,
     });
   };
-
+  console.log(width);
   return (
     <Wrapper>
       <TextWrapper>
@@ -29,7 +34,10 @@ function Hero({ tracks }) {
           <ButtonText>Play</ButtonText>
         </PlayButton>
       </TextWrapper>
-      <img src={DesktopRadio} />
+      <HeroImage
+        src={width < breakpoints.xl ? TabletRadioImage : DesktopRadioImage}
+        alt="Hands holding radio"
+      />
     </Wrapper>
   );
 }

@@ -2,8 +2,8 @@ import Header from "components/Header";
 import Player from "components/Player";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-
-export const ContentWrapper = styled.div`
+import { device } from "styles/BreakPoints";
+export const ContentWrapper = styled.main`
   max-width: 1920px;
   padding: 0 120px;
   width: 100%;
@@ -12,6 +12,13 @@ export const ContentWrapper = styled.div`
   display: ${(props) => props.display || "block"};
   align-items: ${(props) => props.items || "flex-start"};
   justify-content: ${(props) => props.content || "flex-start"};
+
+  ${device.xl} {
+    padding: 0 62px;
+  }
+  ${device.md} {
+    padding: 0 15px;
+  }
 `;
 
 function Layout() {

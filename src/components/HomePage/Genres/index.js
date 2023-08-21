@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import axios from "axios";
 import GenreCard from "./GenreCard";
 import Skeleton from "react-loading-skeleton";
 import { Pagination } from "swiper/modules";
@@ -17,12 +16,15 @@ import {
 import { loadGenres } from "services/api";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useWindowSize } from "hooks/useWindowSize";
+import { breakpoints } from "styles/BreakPoints";
 
 function Genres() {
   const [genres, setGenres] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const sliderRef = useRef(null);
+
+  const { width } = useWindowSize();
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -68,13 +70,18 @@ function Genres() {
             [...Array(8).keys()].map((num) => (
               <Skeleton
                 key={num}
-                height={116}
-                width={220}
+                height={width < breakpoints.md ? 95 : 116}
+                width={width < breakpoints.md ? 137 : 220}
                 borderRadius={25}
                 wrapper={GenresSkeletonWrapper}
               />
             ))}
-          <Swiper ref={sliderRef} slidesPerView="auto" spaceBetween={20} modules={[Pagination]}>
+          <Swiper
+            ref={sliderRef}
+            slidesPerView="auto"
+            spaceBetween={width < breakpoints.md ? 9 : 20}
+            modules={[Pagination]}
+          >
             {!isLoading &&
               genres.map((genre) => (
                 <SwiperSlide key={genre.id} style={{ width: "auto" }}>
