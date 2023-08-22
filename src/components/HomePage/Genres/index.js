@@ -1,10 +1,15 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import GenreCard from "./GenreCard";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import GenreCard from "./GenreCard";
 import { ArrowLeft, ArrowRight } from "components/ui/Icons";
 import { SectionSubtitle } from "components/ui/Typography";
+import { loadGenres } from "services/api";
+import { useWindowSize } from "hooks/useWindowSize";
+import { breakpoints } from "styles/BreakPoints";
 import {
   Button,
   ButtonsWrapper,
@@ -13,11 +18,6 @@ import {
   Wrapper,
   GenresSkeletonWrapper,
 } from "./styled";
-import { loadGenres } from "services/api";
-import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
-import { useWindowSize } from "hooks/useWindowSize";
-import { breakpoints } from "styles/BreakPoints";
 
 function Genres() {
   const [genres, setGenres] = useState([]);

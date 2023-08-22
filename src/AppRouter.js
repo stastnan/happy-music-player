@@ -5,6 +5,7 @@ import Error from "pages/Error";
 import Genre from "pages/Genre";
 import Search from "pages/Search";
 import Home from "pages/Home";
+import Artist from "pages/Artist";
 
 function AppRouter() {
   return (
@@ -14,6 +15,8 @@ function AppRouter() {
           <Route index element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/genres/:genreId" element={<Genre />} />
+          <Route path="/artists/:artistId" element={<Artist />} />
+
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

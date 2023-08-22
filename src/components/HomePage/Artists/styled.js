@@ -1,11 +1,10 @@
-import { MOBILE_PLAYER_HEIGHT, PLAYER_HEIGHT } from "common/constants";
 import styled from "styled-components";
 import { device } from "styles/BreakPoints";
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  margin-top: 35px;
 
   ${device.md} {
     margin-top: 20px;
@@ -27,6 +26,5 @@ export const ArtistLoaderWrapper = styled.div`
   display: flex;
   gap: 14px;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
 `;

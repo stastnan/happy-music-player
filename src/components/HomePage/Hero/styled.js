@@ -43,7 +43,7 @@ export const HeroText = styled(Text)`
 
 export const HeroTitleText = styled(MainTitle)`
   @media (max-width: ${HERO_IMAGE_HIDDEN_BREAKPOINT}px) {
-    font-size: 46px;
+    font-size: 45px;
     line-height: 68px;
   }
 `;

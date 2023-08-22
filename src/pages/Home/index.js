@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { Artists, Genres, Hero } from "components/HomePage";
 import { GreyTitle, TrendsAndArtistsSection, StyledAside } from "./styled";
 import { SectionTitle } from "components/ui/Typography";
+import TracksTable from "components/TracksTable";
+import { loadChart, loadTopRadioTracks } from "services/api";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import { loadChart, loadTopRadioTracks } from "services/api";
-import { toast } from "react-toastify";
-import TracksTable from "components/TracksTable";
 
 function Home() {
   const [chart, setChart] = useState();

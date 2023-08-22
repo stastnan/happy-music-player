@@ -1,6 +1,6 @@
+import styled from "styled-components";
 import { MOBILE_PLAYER_HEIGHT, PLAYER_HEIGHT } from "common/constants";
 import { SectionSubtitle } from "components/ui/Typography";
-import styled from "styled-components";
 import { device } from "styles/BreakPoints";
 
 export const Wrapper = styled.div`
@@ -25,6 +25,10 @@ export const InputWrapper = styled.div`
 
   ${device.lg} {
     width: 100%;
+  }
+
+  ${device.md} {
+    gap: 25px;
   }
 `;
 

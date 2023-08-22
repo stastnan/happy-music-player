@@ -11,7 +11,7 @@ export const Table = styled.table`
 `;
 
 export const TableHeading = styled.th`
-  padding: 30px 20px 30px ${(props) => (props.first ? "20px" : 0)};
+  padding: 30px 20px 30px ${(props) => (props.first ? "20px" : "0")};
 `;
 
 export const TableHeadingTime = styled(TableHeading)`
@@ -21,7 +21,6 @@ export const TableHeadingTime = styled(TableHeading)`
 export const Line = styled.td`
   width: 100%;
   height: 1px;
-  opacity: 0.5;
   background: linear-gradient(
     90deg,
     rgba(198, 198, 198, 0) 0%,

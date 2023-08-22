@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { InputWrapper, NotFoundText, TableTitle, Wrapper } from "./styled";
 import { toast } from "react-toastify";
+import { InputWrapper, NotFoundText, TableTitle, Wrapper } from "./styled";
 import TracksTable from "components/TracksTable";
 import { search } from "services/api";
 import Input from "components/ui/Input";

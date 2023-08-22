@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { ReactComponent as PlayIcon } from "assets/icons/play.svg";
 import { ReactComponent as PauseIcon } from "assets/icons/pause.svg";
 import { ReactComponent as MusicIcon } from "assets/icons/music.svg";
@@ -7,8 +8,6 @@ import { ReactComponent as SkipLeftIcon } from "assets/icons/skipLeft.svg";
 import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
 import { ReactComponent as VolumeIcon } from "assets/icons/volume.svg";
 import { ReactComponent as Logo } from "assets/icons/logo.svg";
-
-import styled from "styled-components";
 
 const Play = styled(PlayIcon)`
   fill: ${(props) => props.color || "white"};

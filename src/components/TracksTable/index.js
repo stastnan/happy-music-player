@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import Skeleton from "react-loading-skeleton";
+import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
+import { actions } from "context/actions";
 import { SubText } from "components/ui/Typography";
 import { Table, TableHead, TableHeading, TableHeadingTime, Line } from "./styled";
 import TrackRow from "./TrackRow";
-import Skeleton from "react-loading-skeleton";
-import { useContext } from "react";
-import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
-import { actions } from "context/actions";
 import { useWindowSize } from "hooks/useWindowSize";
-import { breakpoints, device } from "styles/BreakPoints";
+import { breakpoints } from "styles/BreakPoints";
 
 function TracksTable({ tracks, isLoading }) {
   const { width } = useWindowSize();
@@ -40,7 +40,7 @@ function TracksTable({ tracks, isLoading }) {
           </TableHeading>
 
           <TableHeading>
-            <SubText>{isLoading ? <Skeleton /> : "Song Name"}</SubText>
+            <SubText>{isLoading ? <Skeleton /> : "Song name"}</SubText>
           </TableHeading>
 
           {width > breakpoints.md && (
@@ -50,11 +50,11 @@ function TracksTable({ tracks, isLoading }) {
           )}
           {width > breakpoints.md && (
             <TableHeading>
-              <SubText>{isLoading ? <Skeleton /> : "Album Name"}</SubText>
+              <SubText>{isLoading ? <Skeleton /> : "Album name"}</SubText>
             </TableHeading>
           )}
           <TableHeading>
-            <SubText>{isLoading ? <Skeleton /> : "Actions"}</SubText>
+            <SubText>{isLoading ? <Skeleton /> : "Action"}</SubText>
           </TableHeading>
         </tr>
       </TableHead>

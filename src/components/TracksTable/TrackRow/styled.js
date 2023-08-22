@@ -43,6 +43,7 @@ export const TrackInfoImage = styled.img`
 export const TrackTitle = styled(Text)`
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 
@@ -74,6 +75,7 @@ export const StyledIconButton = styled(IconButton)`
 
 export const StyledTrackRow = styled.tr`
   cursor: pointer;
+  border-radius: 15px;
   transition: background-color 0.2s ease-in-out;
 
   &:hover {

@@ -1,12 +1,13 @@
-import TracksTable from "components/TracksTable";
-import { Music } from "components/ui/Icons";
 import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import TracksTable from "components/TracksTable";
+import { Music } from "components/ui/Icons";
 import { loadGenre } from "services/api";
 import { SongsCountWrapper, TextWrapper, Wrapper } from "./styled";
 import { MainTitle, SmallText } from "components/ui/Typography";
+import { theme } from "styles/Theme";
 
 function Genre() {
   const { genreId } = useParams();
@@ -33,7 +34,7 @@ function Genre() {
       <TextWrapper>
         <MainTitle>{genre?.genre?.name || <Skeleton width={200} />}</MainTitle>
         <SongsCountWrapper>
-          <Music />
+          <Music color={theme.colors.secondaryGrey} />
           <SmallText>
             {isLoading ? <Skeleton width={40} /> : `${genre?.tracks?.length} songs`}
           </SmallText>

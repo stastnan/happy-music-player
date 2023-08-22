@@ -1,6 +1,7 @@
+import { useContext, useEffect, useRef, useState } from "react";
 import Slider from "rc-slider";
 import PropTypes from "prop-types";
-
+import { useLocation } from "react-router-dom";
 import { ContentWrapper } from "components/Layout";
 import {
   ArtistName,
@@ -20,13 +21,11 @@ import {
 import IconButton from "components/ui/IconButton";
 import { Pause, Play, SkipLeft, SkipRight, Volume } from "components/ui/Icons";
 import { theme } from "styles/Theme";
-import { useContext, useEffect, useRef, useState } from "react";
 import { formatToMinAndSec } from "utils/time";
 import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
 import { actions } from "context/actions";
 import { useWindowSize } from "hooks/useWindowSize";
 import { breakpoints } from "styles/BreakPoints";
-import { useLocation } from "react-router-dom";
 
 function Player() {
   const location = useLocation();

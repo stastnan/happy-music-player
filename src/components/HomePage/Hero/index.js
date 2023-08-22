@@ -1,12 +1,12 @@
-import { ButtonText, MainTitle } from "components/ui/Typography";
+import { useContext } from "react";
+import { PropTypes } from "prop-types";
+import { PlayerDispatchContext } from "context/playerContext";
+
+import { ButtonText } from "components/ui/Typography";
 import { PlayButton, TextWrapper, Wrapper, HeroText, HeroImage, HeroTitleText } from "./styled";
 import DesktopRadioImage from "assets/images/radio-desktop.png";
 import TabletRadioImage from "assets/images/radio-tablet.png";
-
 import { Play } from "components/ui/Icons";
-import { PropTypes } from "prop-types";
-import { useContext } from "react";
-import { PlayerDispatchContext } from "context/playerContext";
 import { actions } from "context/actions";
 import { useWindowSize } from "hooks/useWindowSize";
 import { breakpoints } from "styles/BreakPoints";

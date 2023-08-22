@@ -1,26 +1,22 @@
-import { ErrorBoundary } from "react-error-boundary";
 import { ToastContainer } from "react-toastify";
+import { useEffect, useReducer } from "react";
+import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
+import { initialState, playerReducer } from "context/playerReducer";
 import { SkeletonTheme } from "react-loading-skeleton";
+import AppRouter from "AppRouter";
+import { setStorageValue } from "services/localStorage";
 import { ThemeProvider } from "styled-components";
 import { theme } from "styles/Theme";
 import { GlobalStyles } from "styles/Global";
-import Home from "pages/Home";
 
 // Import skeleton loader styles
 import "react-loading-skeleton/dist/skeleton.css";
 
 // Import react toastify styles
 import "react-toastify/dist/ReactToastify.css";
-import Player from "components/Player";
 
 //Import rc-slider styles
 import "rc-slider/assets/index.css";
-import { initialState, playerReducer } from "context/playerReducer";
-import { useEffect, useReducer } from "react";
-import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
-
-import { setStorageValue } from "services/localStorage";
-import AppRouter from "AppRouter";
 
 function App() {
   const [state, dispatch] = useReducer(playerReducer, initialState);
