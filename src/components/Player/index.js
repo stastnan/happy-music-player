@@ -117,6 +117,11 @@ function Player() {
     }
   }, [width]);
 
+  useEffect(() => {
+    if (!audioRef?.current) return;
+    audioRef.current.volume = 0.1;
+  }, [audioRef?.current]);
+
   if (!track) {
     return null;
   }

@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 `;
 
 export const InputWrapper = styled.div`
-  width: 70%;
+  width: 100%;
 
   ${device.lg} {
     width: 100%;
