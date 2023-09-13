@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import { Artists, Genres, Hero } from "components/HomePage";
 import { GreyTitle, TrendsAndArtistsSection, StyledAside } from "./styled";
 import { SectionTitle } from "components/ui/Typography";
@@ -9,27 +7,11 @@ import { loadChart, loadTopRadioTracks } from "services/api";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import { useLoadData } from "hooks/useLoadData";
 
 function Home() {
-  const [chart, setChart] = useState();
-  const [radio, setRadio] = useState();
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        setIsLoading(true);
-        const [chart, radio] = await Promise.all([loadChart(), loadTopRadioTracks()]);
-        setChart(chart);
-        setRadio(radio);
-      } catch (err) {
-        toast.error(err.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    loadData();
-  }, []);
+  const [data, isLoading] = useLoadData(() => Promise.all([loadChart(), loadTopRadioTracks()]));
+  const [chart, radio] = data || [];
 
   return (
     <main>
