@@ -23,7 +23,7 @@ function Hero({ tracks }) {
       isPlaying: true,
     });
   };
-  console.log(width);
+
   return (
     <Wrapper>
       <TextWrapper>
