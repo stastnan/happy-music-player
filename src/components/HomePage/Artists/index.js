@@ -3,6 +3,7 @@ import { Pagination } from "swiper/modules";
 import PropTypes from "prop-types";
 import Skeleton from "react-loading-skeleton";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import { ArtistsWrapper, Wrapper, ArtistsSkeletonWrapper, ArtistLoaderWrapper } from "./styled";
 import ArtistCard from "./ArtistCard";
 import { useWindowSize } from "hooks/useWindowSize";

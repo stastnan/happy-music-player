@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import { Wrapper, Image, ArtistName } from "./styled";
 
 function ArtistCard({ image, name }) {

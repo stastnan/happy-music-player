@@ -1,5 +1,5 @@
 {
-  "name": "react-music-player",
+  "name": "happy-music-player",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://api.deezer.com",

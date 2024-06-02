@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import { StyledInput } from "./styled";
 
 function Input({ startIcon, ...props }) {

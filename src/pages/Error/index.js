@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+
 import { ButtonText, SectionTitle } from "components/ui/Typography";
 import { Wrapper } from "./styled";
 import Button from "components/ui/Button";

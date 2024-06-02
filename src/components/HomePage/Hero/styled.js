@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { MainTitle, Text } from "components/ui/Typography";
 import Button from "components/ui/Button";
 import { device } from "styles/BreakPoints";

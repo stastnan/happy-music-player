@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
 export const TableHead = styled.thead`
   width: 100%;
@@ -10,7 +11,9 @@ export const Table = styled.table`
   width: 100%;
 `;
 
-export const TableHeading = styled.th`
+export const TableHeading = styled.th.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "first",
+})`
   padding: 30px 20px 30px ${(props) => (props.first ? "20px" : "0")};
 `;
 

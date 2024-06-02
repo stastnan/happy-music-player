@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { Outlet } from "react-router-dom";
+import isPropValid from "@emotion/is-prop-valid";
+
 import Header from "components/Header";
 import Player from "components/Player";
 import { device } from "styles/BreakPoints";
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "items",
+})`
   max-width: 1920px;
   padding: 0 120px;
   width: 100%;

@@ -17,6 +17,7 @@ export function useLoadData(fetchData) {
         setIsLoading(false);
       }
     };
+
     loadData();
   }, []);
 

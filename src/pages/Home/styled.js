@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { SectionSubtitle } from "components/ui/Typography";
 import { MOBILE_PLAYER_HEIGHT, PLAYER_HEIGHT } from "common/constants";
 import { device } from "styles/BreakPoints";

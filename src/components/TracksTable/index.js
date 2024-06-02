@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
 import Skeleton from "react-loading-skeleton";
+
 import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
 import { actions } from "context/actions";
 import { SubText } from "components/ui/Typography";

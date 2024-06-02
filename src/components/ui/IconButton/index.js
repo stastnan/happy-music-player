@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import { StyledButton } from "./styled";
 
 function IconButton({ withBackground, ...props }) {

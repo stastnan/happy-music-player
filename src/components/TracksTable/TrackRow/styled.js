@@ -1,6 +1,7 @@
+import styled from "styled-components";
+
 import IconButton from "components/ui/IconButton";
 import { SubText, Text } from "components/ui/Typography";
-import styled from "styled-components";
 import { device } from "styles/BreakPoints";
 
 export const TableData = styled.td`

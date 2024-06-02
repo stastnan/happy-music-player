@@ -1,4 +1,10 @@
 import PropTypes from "prop-types";
+import Skeleton from "react-loading-skeleton";
+
+import { Heart, Pause, Play } from "components/ui/Icons";
+import { formatToMinAndSec } from "utils/time";
+import { theme } from "styles/Theme";
+import { breakpoints } from "styles/BreakPoints";
 import {
   TableData,
   TrackInfoTextWrapper,
@@ -11,11 +17,6 @@ import {
   IconWrapper,
   StyledTrackRow,
 } from "./styled";
-import { Heart, Pause, Play } from "components/ui/Icons";
-import { formatToMinAndSec } from "utils/time";
-import Skeleton from "react-loading-skeleton";
-import { theme } from "styles/Theme";
-import { breakpoints } from "styles/BreakPoints";
 
 function TrackRow({
   track,

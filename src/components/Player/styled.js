@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
+
 import { SubText, Text } from "components/ui/Typography";
 import { MOBILE_HEADER_HEIGHT, MOBILE_PLAYER_HEIGHT, PLAYER_HEIGHT } from "common/constants";
 import { device } from "styles/BreakPoints";
@@ -17,7 +19,7 @@ export const Wrapper = styled.div`
 
   ${device.lg} {
     height: ${(props) =>
-      props.full ? `calc(100vh - ${MOBILE_HEADER_HEIGHT}px)` : `${MOBILE_PLAYER_HEIGHT}px`};
+      props.open ? `calc(100vh - ${MOBILE_HEADER_HEIGHT}px)` : `${MOBILE_PLAYER_HEIGHT}px`};
     border-top-right-radius: ${(props) => (props.open ? 0 : "25px")};
     border-top-left-radius: ${(props) => (props.open ? 0 : "25px")};
   }
@@ -115,7 +117,9 @@ export const VolumeWrapper = styled.div`
   }
 `;
 
-export const TrackTime = styled(SubText)`
+export const TrackTime = styled(SubText).withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "grey",
+})`
   width: 80px;
   margin: 0 20px;
   color: ${(props) => (props.grey ? props.theme.colors.secondaryGrey : "inherit")};

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from "common/constants";
 import { device } from "styles/BreakPoints";
 

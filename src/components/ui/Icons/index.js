@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { ReactComponent as PlayIcon } from "assets/icons/play.svg";
 import { ReactComponent as PauseIcon } from "assets/icons/pause.svg";
 import { ReactComponent as MusicIcon } from "assets/icons/music.svg";

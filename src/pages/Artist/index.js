@@ -1,5 +1,6 @@
 import Skeleton from "react-loading-skeleton";
 import { useParams } from "react-router-dom";
+
 import TracksTable from "components/TracksTable";
 import { Music } from "components/ui/Icons";
 import { loadArtist } from "services/api";
@@ -7,6 +8,7 @@ import { MainTitle, SectionTitle, SmallText } from "components/ui/Typography";
 import { theme } from "styles/Theme";
 import { breakpoints } from "styles/BreakPoints";
 import { useWindowSize } from "hooks/useWindowSize";
+import { useLoadData } from "hooks/useLoadData";
 import {
   ArtistImage,
   ArtistImageLoaderWrapper,
@@ -15,7 +17,6 @@ import {
   TextWrapper,
   Wrapper,
 } from "./styled";
-import { useLoadData } from "hooks/useLoadData";
 
 function Artist() {
   const { width } = useWindowSize();

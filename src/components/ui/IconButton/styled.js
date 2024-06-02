@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "bg",
+})`
   display: flex;
   align-items: center;
   justify-content: center;

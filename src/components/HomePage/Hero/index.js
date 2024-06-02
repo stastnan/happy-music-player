@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PropTypes } from "prop-types";
-import { PlayerDispatchContext } from "context/playerContext";
 
+import { PlayerDispatchContext } from "context/playerContext";
 import { ButtonText } from "components/ui/Typography";
 import { PlayButton, TextWrapper, Wrapper, HeroText, HeroImage, HeroTitleText } from "./styled";
 import DesktopRadioImage from "assets/images/radio-desktop.png";

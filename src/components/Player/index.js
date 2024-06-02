@@ -2,7 +2,16 @@ import { useContext, useEffect, useRef, useState } from "react";
 import Slider from "rc-slider";
 import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
+
 import { ContentWrapper } from "components/Layout";
+import IconButton from "components/ui/IconButton";
+import { Pause, Play, SkipLeft, SkipRight, Volume } from "components/ui/Icons";
+import { theme } from "styles/Theme";
+import { formatToMinAndSec } from "utils/time";
+import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
+import { actions } from "context/actions";
+import { useWindowSize } from "hooks/useWindowSize";
+import { breakpoints } from "styles/BreakPoints";
 import {
   ArtistName,
   ControlsWrapper,
@@ -18,14 +27,6 @@ import {
   BackButton,
   BigTackImage,
 } from "./styled";
-import IconButton from "components/ui/IconButton";
-import { Pause, Play, SkipLeft, SkipRight, Volume } from "components/ui/Icons";
-import { theme } from "styles/Theme";
-import { formatToMinAndSec } from "utils/time";
-import { PlayerContext, PlayerDispatchContext } from "context/playerContext";
-import { actions } from "context/actions";
-import { useWindowSize } from "hooks/useWindowSize";
-import { breakpoints } from "styles/BreakPoints";
 
 function Player() {
   const { width } = useWindowSize();
@@ -50,11 +51,7 @@ function Player() {
   }
 
   return (
-    <Wrapper
-      onClick={playerState.isOpen ? null : toggleOpen}
-      full={playerState.isOpen}
-      open={playerState.isOpen}
-    >
+    <Wrapper onClick={playerState.isOpen ? null : toggleOpen} open={playerState.isOpen}>
       <audio
         ref={audioRef}
         src={track.preview}

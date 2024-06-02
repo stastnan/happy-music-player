@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
+
 import { SectionSubtitle } from "components/ui/Typography";
 import { device } from "styles/BreakPoints";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "image",
+})`
   display: flex;
   justify-content: center;
   align-items: center;

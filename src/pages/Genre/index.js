@@ -1,5 +1,6 @@
 import Skeleton from "react-loading-skeleton";
 import { useParams } from "react-router-dom";
+
 import TracksTable from "components/TracksTable";
 import { Music } from "components/ui/Icons";
 import { loadGenre } from "services/api";

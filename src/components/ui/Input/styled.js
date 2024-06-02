@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "icon",
+})`
   width: 100%;
   background: ${({ theme }) => theme.colors.lightWhite};
   font-family: ${({ theme }) => theme.fonts.inter};

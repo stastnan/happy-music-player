@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import { Wrapper, GenreName } from "./styled";
 
 function GenreCard({ backgroundImage, name }) {

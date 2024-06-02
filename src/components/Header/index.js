@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import { SectionSubtitle } from "components/ui/Typography";
 import { Logo, Search } from "components/ui/Icons";
 import { LogoWrapper, Wrapper } from "./styled";
@@ -12,7 +13,7 @@ function Header() {
         <Link to="/">
           <LogoWrapper>
             <Logo />
-            <SectionSubtitle>ZaMusic</SectionSubtitle>
+            <SectionSubtitle>Happy Music</SectionSubtitle>
           </LogoWrapper>
         </Link>
         <Link to="/search">

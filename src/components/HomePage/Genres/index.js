@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import GenreCard from "./GenreCard";
 import { ArrowLeft, ArrowRight } from "components/ui/Icons";
 import { SectionSubtitle } from "components/ui/Typography";
