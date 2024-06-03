@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Happy Music Player Repository
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the GitHub repository for Happy Music Player. This repository houses the source code for my music player application, which allows users to interact with music through the Deezer API. The application showcases a variety of functionalities, including playing top tracks, searching for songs, and managing playback settings.
 
-## Available Scripts
+## Application Overview
 
-In the project directory, you can run:
+Happy Music Player is tailored specifically to enhance users' music enjoyment with its user-centric design and interactive features. Developed using React, this application offers a blend of functionality and aesthetics, ensuring a great music streaming experience. With intuitive controls and an elegant interface, users can effortlessly search, play, and manage their music. The player supports comprehensive interactions such as song search, playlist management, and real-time control over music playback settings, making it an essential part of users' daily music interaction.
 
-### `npm start`
+## Highlights
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Play music from a comprehensive library via the Deezer API.
+- Search functionality to find specific tracks.
+- Control options such as play, pause, skip, and volume adjustment.
+- Save favorite tracks to local storage.
+- **[Visit Happy Music Player]**(URL TO BE ADDED LATER)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Repository Structure
 
-### `npm test`
+The Happy Music Player's codebase is organized into a type-based structure, which categorizes files and directories by their functional role within the application. This organization facilitates easy navigation and maintenance of the code:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pages
 
-### `npm run build`
+This directory contains all the main pages or routes of the application, each representing a distinct functional area:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Home Page**: The primary landing page where users start their music experience.
+- **Search Page**: Enables users to find songs through a search interface.
+- **Artist Page**: Shows songs published by a chosen artist.
+- **Genre Page**: Displays a list of songs that belong to a chosen genre.
+- **Error Page**: Displayed when the application cannot fulfill a request, handling any navigational errors.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each component has its own directory, which includes both its JavaScript logic and styling details. This makes it easy to manage and isolate component-specific changes:
 
-### `npm run eject`
+- **Header**: Contains all the UI and logic for the application's header.
+- **HomePage**: Comprises components specifically used on the homepage, such as the Hero, Genres, and Artists related components.
+- **Player**: Holds the player component that controls music playback.
+- **TracksTable**: These components are used for displaying lists of tracks and individual track rows.
+- **Layout**: Includes components that dictate the overall layout and structure of the application, ensuring consistent styles and behavior across different pages.
+- **UI**: A special directory for smaller UI components that might be used across different parts of the application, promoting reuse and better organization.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Core Technologies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **React**: Utilizing React to build a dynamic and responsive front-end.
+- **Create React App**: Sets up the project with standard configurations automatically.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Styling
 
-## Learn More
+- **Styled Components**: Leveraging CSS-in-JS for scoped and maintainable styles.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Utility Libraries
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **UUID**: Generating unique identifiers for tracking favorite songs.
+- **React Icons**: Enhancing the UI with scalable icons.
+- **React Router**: Managing navigation within the application.
+- **Axios**: Performing HTTP requests to external APIs, in this project to the Deezer API.
+- **React Loading Skeleton**: Displays placeholder animations while content is loading, improving the user experience.
+- **React Toastify**: Displaying informative toast notifications to enhance user experience.
+- **Swiper**: Creating responsive and interactive sliders for content navigation.
 
-### Code Splitting
+### Development Tools
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Yarn**: Managing packages and running predefined script commands.
+- **ESLint and Prettier**: Ensuring code quality and consistency across the project.
 
-### Analyzing the Bundle Size
+## Clone & Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Prerequisites
 
-### Making a Progressive Web App
+Ensure you have the following installed on your system:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Node.js** (recommended: the latest stable version)
+- **Yarn** package manager
 
-### Advanced Configuration
+Check installation:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- node -v
+- yarn -v
 
-### Deployment
+**Repository Cloning:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- git clone https://github.com/stastnan/happy-music-player.git
+- cd happy-music-player
 
-### `npm run build` fails to minify
+**Installing Dependencies:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- yarn install
+
+**Running the Project:**
+
+- yarn dev
+  This command starts the project on your local server.
+
+I am always open to networking, opportunities, and collaborations. Feel free to reach out to me via email at nik.stastna@gmail.com.
