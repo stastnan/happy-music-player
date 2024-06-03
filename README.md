@@ -56,6 +56,7 @@ Each component has its own directory, which includes both its JavaScript logic a
 - **React Icons**: Enhancing the UI with scalable icons.
 - **React Router**: Managing navigation within the application.
 - **Axios**: Performing HTTP requests to external APIs, in this project to the Deezer API.
+- **PropTypes**: Used for checking the types of props passed in React components, aiding in bug prevention.
 - **React Loading Skeleton**: Displays placeholder animations while content is loading, improving the user experience.
 - **React Toastify**: Displaying informative toast notifications to enhance user experience.
 - **Swiper**: Creating responsive and interactive sliders for content navigation.
