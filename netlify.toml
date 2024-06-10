@@ -3,7 +3,6 @@ command = "yarn build"
 publish = "build"
 
 [[redirects]]
-from = "//\*"
+from = "/*"
 to = "https://api.deezer.com/:splat"
 status = 200
-force = true
