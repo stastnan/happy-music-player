@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://api.deezer.com";
+const API_BASE_URL = "/api";
 const API_CHART_URL = "/chart";
 const API_GENRES_URL = "/genre";
 const API_SEARCH_URL = "/search";
