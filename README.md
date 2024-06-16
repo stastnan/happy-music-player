@@ -13,6 +13,7 @@ Happy Music Player is tailored specifically to enhance users' music enjoyment wi
 - Control options such as play, pause, skip, and volume adjustment.
 - Save favorite tracks to local storage.
 - **[Visit Happy Music Player](https://main--chic-kataifi-e8fea7.netlify.app/)**
+- **[Watch project's video presentation](https://www.loom.com/share/9a4b6dcd55484162b5ee13d29f16038a?sid=2ed5da2c-05a6-47d3-bbd5-d1b077226cf0)**
 
 ## Repository Structure
 
