@@ -25,7 +25,7 @@ import {
   Wrapper,
   MobileTrackRow,
   BackButton,
-  BigTackImage,
+  BigTrackImage,
 } from "./styled";
 
 function Player() {
@@ -95,9 +95,9 @@ function PlayerLayout({
 }) {
   if (open) {
     return (
-      <ContentWrapper display="flex" direction="column" gap={14}>
+      <ContentWrapper display="flex" direction="column" gap={12}>
         <BackButton onClick={toggleOpen}>Back</BackButton>
-        <BigTackImage src={track.album.cover_big} alt={`${track?.album.title}'s cover`} />
+        <BigTrackImage src={track.album.cover_big} alt={`${track?.album.title}'s cover`} />
         <MobileTrackRow>
           <TrackInfoWrapper>
             <TrackInfoTextWrapper>

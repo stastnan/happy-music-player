@@ -58,11 +58,15 @@ export const TrackImage = styled.img`
   }
 `;
 
-export const BigTackImage = styled.img`
-  height: 311px;
-  width: 311px;
+export const BigTrackImage = styled.img`
+  max-height: 40%;
+  max-width: 40%;
   border-radius: 10px;
   margin: 0 auto 37px;
+  ${device.sm} {
+    max-height: 25%;
+    max-width: 25%;
+  }
 `;
 
 export const TrackTitle = styled(Text)`
