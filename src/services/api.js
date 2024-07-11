@@ -25,7 +25,10 @@ export const loadGenres = async () => {
 
     if (!data?.data?.data) throw Error();
 
-    return data.data.data.filter((genre) => genre.name.toLowerCase() !== "all");
+    return data.data.data.filter((genre) => {
+      const genreName = genre.name.toLowerCase();
+      return genreName !== "all" && genreName !== "všechny";
+    });
   } catch (err) {
     throw Error("Failed to load genres!");
   }
