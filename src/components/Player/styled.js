@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
   left: 0;
   width: 100%;
   z-index: ${({ theme }) => theme.zIndex["30"]};
-
   ${device.lg} {
     height: ${(props) =>
       props.open ? `calc(100vh - ${MOBILE_HEADER_HEIGHT}px)` : `${MOBILE_PLAYER_HEIGHT}px`};
@@ -59,8 +58,8 @@ export const TrackImage = styled.img`
 `;
 
 export const BigTrackImage = styled.img`
-  max-height: 40%;
-  max-width: 40%;
+  max-height: 30%;
+  max-width: 30%;
   border-radius: 10px;
   margin: 0 auto 37px;
   ${device.sm} {
@@ -103,7 +102,6 @@ export const ProgressWrapper = styled.div`
   align-items: center;
   margin-left: 60px;
   width: 100%;
-
   ${device.lg} {
     margin: ${(props) => (props.open ? "40px 0" : 0)};
   }
