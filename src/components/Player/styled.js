@@ -63,8 +63,8 @@ export const BigTrackImage = styled.img`
   border-radius: 10px;
   margin: 0 auto 37px;
   ${device.sm} {
-    max-height: 25%;
-    max-width: 25%;
+    max-height: 50%;
+    max-width: 50%;
   }
 `;
 
@@ -103,7 +103,7 @@ export const ProgressWrapper = styled.div`
   margin-left: 60px;
   width: 100%;
   ${device.lg} {
-    margin: ${(props) => (props.open ? "40px 0" : 0)};
+    margin: ${(props) => (props.open ? "20px 0" : 0)};
   }
 `;
 
@@ -114,7 +114,7 @@ export const VolumeWrapper = styled.div`
   margin-left: 130px;
   min-width: 180px;
   ${device.xl} {
-    margin: ${(props) => (props.open ? "48px auto 0" : "0 0 0 60px")};
+    margin: ${(props) => (props.open ? "20px auto 0" : "0 0 0 60px")};
     width: ${(props) => (props.open ? "65%" : "auto")};
   }
 `;

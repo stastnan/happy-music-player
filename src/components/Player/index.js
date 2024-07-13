@@ -95,7 +95,7 @@ function PlayerLayout({
 }) {
   if (open) {
     return (
-      <ContentWrapper display="flex" direction="column" gap={12}>
+      <ContentWrapper display="flex" direction="column" gap={2}>
         <BackButton onClick={toggleOpen}>Back</BackButton>
         <BigTrackImage src={track.album.cover_big} alt={`${track?.album.title}'s cover`} />
         <MobileTrackRow>
