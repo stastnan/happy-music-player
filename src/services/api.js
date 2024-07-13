@@ -27,7 +27,12 @@ export const loadGenres = async () => {
 
     return data.data.data.filter((genre) => {
       const genreName = genre.name.toLowerCase();
-      return genreName !== "all" && genreName !== "všechny";
+      return (
+        genreName !== "all" &&
+        genreName !== "všechny" &&
+        genreName !== "audiobooks" &&
+        genreName !== "audioknihy"
+      );
     });
   } catch (err) {
     throw Error("Failed to load genres!");
